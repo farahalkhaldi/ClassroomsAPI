@@ -1,25 +1,23 @@
 from rest_framework import serializers
-from API.models import Classroom
+from classes.models import Classroom
 
-class ClassroomListSerializer(serializers.ModelSerializer):
+
+class ClassroomSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Classroom
-		fields = ["id", "subject", "year", "teacher"]
+		fields = ['subject', 'year', 'teacher', 'id']
 
-
-class ClassroomDetailSerializer(serializers.ModelSerializer):
+class ClassroomDetailsSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Classroom
-		fields = ["id", "name", "subject", "year", "teacher"]
+		fields = ['name', 'subject', 'year', 'teacher', 'id']
 
-
-class ClassroomUpdateSerializer(serializers.ModelSerializer):
+class CreateSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Classroom
-		fields = ["name", "subject", "year"]
+		fields = [ 'name', 'subject', 'year', 'teacher' ]
 
-
-class ClassroomreateSerializer(serializers.ModelSerializer):
+class UpdateSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Classroom
-		fields = ["name", "subject", "year"]
+		fields = [ 'name', 'subject', 'year']
